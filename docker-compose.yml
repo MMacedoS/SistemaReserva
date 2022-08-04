@@ -20,4 +20,4 @@ services:
             - '3306:3306'
         environment:
             MYSQL_ROOT_PASSWORD: 'secret'
-            MYSQL_DATABASE: 'pet'
+            MYSQL_DATABASE: 'petshop'

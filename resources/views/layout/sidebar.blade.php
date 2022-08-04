@@ -7,7 +7,7 @@
             <img src="{{ url('assets/images/faces/face8.jpg') }}" alt="profile image">
           </div>
           <div class="text-wrapper">
-            <p class="profile-name">Mauricio Macedo</p>
+            <p class="profile-name">{{ auth()->user()->name }}</p>
             <div class="dropdown" data-display="static">
               <a href="#" class="nav-link d-flex user-switch-dropdown-toggler" id="UsersettingsDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <small class="designation text-muted">Configuração</small>
@@ -39,8 +39,8 @@
         </button>
       </div>
     </li>
-    <li class="nav-item {{ active_class(['/']) }}">
-      <a class="nav-link" href="{{ url('/') }}">
+    <li class="nav-item {{ active_class(['home']) }}">
+      <a class="nav-link" href="{{ route('home') }}">
         <i class="menu-icon mdi mdi-television"></i>
         <span class="menu-title">Painel Administrativo</span>
       </a>
@@ -102,7 +102,7 @@
             <a class="nav-link" href="{{ url('/basic-ui/buttons') }}"><i class="mdi mdi-incognito"></i> &nbsp; Fornecedor</a>
           </li>
           <li class="nav-item {{ active_class(['basic-ui/dropdowns']) }}">
-            <a class="nav-link" href="{{ url('/basic-ui/dropdowns') }}"><i class="mdi mdi-slack"></i> &nbsp; Produtos</a>
+            <a class="nav-link" href="{{ url('/basic-ui/dropdowns') }}"><i class="mdi mdi-cube-send"></i> &nbsp; Produtos</a>
           </li>
           <li class="nav-item {{ active_class(['basic-ui/dropdowns']) }}">
             <a class="nav-link" href="{{ url('/basic-ui/dropdowns') }}"><i class="mdi mdi-basket"></i> &nbsp; Compras</a>
@@ -167,24 +167,47 @@
             <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-calendar-check"></i> &nbsp; Controle de Qualidade</a>
           </li>
           <li class="nav-item {{ active_class(['reports/dropdowns']) }}">
-            <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-stack-exchange"></i> &nbsp; Vendas</a>
+            <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-slack"></i> &nbsp; Vendas</a>
           </li>
           <li class="nav-item {{ active_class(['reports/dropdowns']) }}">
-            <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-stack-exchange"></i> &nbsp; Lucros R$</a>
+            <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-lumx"></i> &nbsp; Lucros R$</a>
           </li>
           <li class="nav-item {{ active_class(['reports/dropdowns']) }}">
-            <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-stack-exchange"></i> &nbsp; Venda Por Cliente</a>
+            <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-football-helmet"></i> &nbsp; Venda Por Cliente</a>
           </li>
           <li class="nav-item {{ active_class(['reports/dropdowns']) }}">
             <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-stack-exchange"></i> &nbsp; Caixa</a>
           </li>
           <li class="nav-item {{ active_class(['reports/dropdowns']) }}">
-            <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-stack-exchange"></i> &nbsp; Contas</a>
+            <a class="nav-link" href="{{ url('/reports/dropdowns') }}"><i class="mdi mdi-drawing-box"></i> &nbsp; Contas</a>
           </li>
         </ul>
       </div>
     </li>
+    <li class="nav-item {{ active_class(['config/*']) }}">
+      <a class="nav-link" data-toggle="collapse" href="#config" aria-expanded="{{ is_active_route(['config/*']) }}" aria-controls="config">
+        <i class="menu-icon mdi mdi-settings"></i>
+        <span class="menu-title">Configurações</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse {{ show_class(['config/*']) }}" id="config">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item {{ active_class(['config/users']) }}">
+            <a class="nav-link" href="{{ route('users.index') }}"><i class="mdi mdi-stack-exchange"></i> &nbsp; Usuários</a>
+          </li>
+          <li class="nav-item {{ active_class(['config/dropdowns']) }}">
+            <a class="nav-link" href="{{ url('/config/dropdowns') }}"><i class="mdi mdi-stack-exchange"></i> &nbsp; Parametros</a>
+          </li>
+          <li class="nav-item {{ active_class(['config/dropdowns']) }}">
+            <a class="nav-link" href="{{ url('/config/dropdowns') }}"><i class="mdi mdi-settings-box"></i> &nbsp; Atribuições</a>
+          </li>
+          <li class="nav-item {{ active_class(['config/dropdowns']) }}">
+            <a class="nav-link" href="{{ url('/config/dropdowns') }}"><i class="mdi mdi-shape-circle-plus"></i> &nbsp; Permissões</a>
+          </li>
 
+        </ul>
+      </div>
+    </li>
     <!-- <li class="nav-item {{ active_class(['charts/chartjs']) }}">
       <a class="nav-link" href="{{ url('/charts/chartjs') }}">
         <i class="menu-icon mdi mdi-chart-line"></i>

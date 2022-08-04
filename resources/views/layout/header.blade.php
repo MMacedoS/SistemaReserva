@@ -11,25 +11,18 @@
     </button>
     <ul class="navbar-nav navbar-nav-left header-links">
       <li class="nav-item d-none d-xl-flex">
-        <a href="#" class="nav-link">Schedule <span class="badge badge-primary ml-1">New</span>
+        <a href="#" class="nav-link">Agenda <span class="badge badge-primary ml-1">*</span>
         </a>
       </li>
       <li class="nav-item active d-none d-lg-flex">
         <a href="#" class="nav-link">
-          <i class="mdi mdi-elevation-rise"></i>Reports</a>
+          <i class="mdi mdi-elevation-rise"></i>Relatórios</a>
       </li>
       <li class="nav-item d-none d-md-flex">
         <a href="#" class="nav-link">
-          <i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
+          <i class="mdi mdi-bookmark-plus-outline"></i>Mensagens</a>
       </li>
-      <li class="nav-item dropdown d-none d-lg-flex">
-        <a class="nav-link dropdown-toggle px-0" id="quickDropdown" href="#" data-toggle="dropdown" aria-expanded="false"> Quick Links </a>
-        <div class="dropdown-menu dropdown-menu-right navbar-dropdown pt-3" aria-labelledby="quickDropdown">
-          <a href="#" class="dropdown-item">Schedule <span class="badge badge-primary ml-1">New</span></a>
-          <a href="#" class="dropdown-item"><i class="mdi mdi-elevation-rise"></i>Reports</a>
-          <a href="#" class="dropdown-item"><i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
-        </div>
-      </li>
+
     </ul>
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item dropdown">
@@ -110,7 +103,7 @@
       </li>
       <li class="nav-item dropdown d-none d-xl-inline-block">
         <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-          <span class="profile-text d-none d-md-inline-flex">Richard V.Welsh !</span>
+          <span class="profile-text d-none d-md-inline-flex">{{ auth()->user()->name }}</span>
           <img class="img-xs rounded-circle" src="{{ url('assets/images/faces/face8.jpg') }}" alt="Profile image"> </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
           <a class="dropdown-item p-0">
@@ -126,10 +119,10 @@
               </div>
             </div>
           </a>
-          <a class="dropdown-item mt-2"> Manage Accounts </a>
-          <a class="dropdown-item"> Change Password </a>
-          <a class="dropdown-item"> Check Inbox </a>
-          <a class="dropdown-item"> Sign Out </a>
+          <a class="dropdown-item mt-2">Perfil </a>
+          <a class="dropdown-item"> Mudar senha </a>
+          <a class="dropdown-item"> Mensagens </a>
+          <a class="dropdown-item"> Sair </a>
         </div>
       </li>
     </ul>
